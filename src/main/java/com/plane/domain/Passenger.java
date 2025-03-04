@@ -1,4 +1,4 @@
-package com.plane.models;
+package com.plane.domain;
 
 public class Passenger {
     private long id;

@@ -1,4 +1,4 @@
-package com.plane.models;
+package com.plane.domain;
 
 import java.util.List;
 
