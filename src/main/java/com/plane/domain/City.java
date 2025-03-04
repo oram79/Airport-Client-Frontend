@@ -3,7 +3,7 @@ package com.plane.domain;
 import java.util.List;
 
 public class City {
-    private long id;
+    private long cityId;
     private String name;
     private String country;
 
@@ -12,19 +12,19 @@ public class City {
     public City() {
     }
 
-    public City(long id, String name, String country, List<Airport> airports) {
-        this.id = id;
+    public City(long cityId, String name, String country, List<Airport> airports) {
+        this.cityId = cityId;
         this.name = name;
         this.country = country;
         this.airports = airports;
     }
 
-    public long getId() {
-        return id;
+    public long getCityId() {
+        return cityId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setCityId(long cityId) {
+        this.cityId = cityId;
     }
 
     public String getName() {
