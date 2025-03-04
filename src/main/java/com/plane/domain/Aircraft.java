@@ -3,33 +3,29 @@ package com.plane.domain;
 import java.util.List;
 
 public class Aircraft {
-    private long id;
+    private long aircraftId;
 
     private String model;
     private String airline;
-    
-    private Airport departureAirport;
-    private Airport arrivalAirport;
+
     private List<Passenger> passengers;
 
     public Aircraft() {
     }
 
-    public Aircraft(long id, String model, String airline, Airport departureAirport, Airport arrivalAirport, List<Passenger> passengers) {
-        this.id = id;
+    public Aircraft(long aircraftId, String model, String airline, List<Passenger> passengers) {
+        this.aircraftId = aircraftId;
         this.model = model;
         this.airline = airline;
-        this.departureAirport = departureAirport;
-        this.arrivalAirport = arrivalAirport;
         this.passengers = passengers;
     }
 
-    public long getId() {
-        return id;
+    public long getAircraftId() {
+        return aircraftId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setAircraftId(long aircraftId) {
+        this.aircraftId = aircraftId;
     }
 
     public String getModel() {
@@ -46,22 +42,6 @@ public class Aircraft {
 
     public void setAirline(String airline) {
         this.airline = airline;
-    }
-
-    public Airport getDepartureAirport() {
-        return departureAirport;
-    }
-
-    public void setDepartureAirport(Airport departureAirport) {
-        this.departureAirport = departureAirport;
-    }
-
-    public Airport getArrivalAirport() {
-        return arrivalAirport;
-    }
-
-    public void setArrivalAirport(Airport arrivalAirport) {
-        this.arrivalAirport = arrivalAirport;
     }
 
     public List<Passenger> getPassengers() {
