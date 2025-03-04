@@ -25,7 +25,7 @@ public class HTTPRestCLIApplicationTest {
         Airport stJohnsAirport = new Airport();
         stJohnsAirport.setCode("YYT");
         stJohnsAirport.setName("St. John's Airport");
-        stJohnsAirport.setId(1);
+        stJohnsAirport.setAirportId(1);
 
         List<Airport> airportList = new ArrayList<Airport>();
         airportList.add(stJohnsAirport);
