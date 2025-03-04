@@ -1,52 +1,61 @@
 package com.plane.domain;
 
 public class Passenger {
-    private long passengerId;
+    private long passengerID;
+    private String passengerName;
+    private String passengerAddress;
+    private String passengerPhone;
 
-    private String name;
-    private String email;
-
-    private Aircraft airline;
+    private Aircraft aircraftId;
 
     public Passenger() {
     }
 
-    public Passenger(long passengerId, String name, String email, Aircraft airline) {
-        this.passengerId = passengerId;
-        this.name = name;
-        this.email = email;
-        this.airline = airline;
+    public Passenger(long passengerID, String passengerName, String passengerAddress, String passengerPhone, Aircraft aircraftId) {
+        this.passengerID = passengerID;
+        this.passengerName = passengerName;
+        this.passengerAddress = passengerAddress;
+        this.passengerPhone = passengerPhone;
+        this.aircraftId = aircraftId;
     }
 
-    public long getPassengerId() {
-        return passengerId;
+    public long getPassengerID() {
+        return passengerID;
     }
 
-    public void setPassengerId(long passengerId) {
-        this.passengerId = passengerId;
+    public void setPassengerID(long passengerID) {
+        this.passengerID = passengerID;
     }
 
-    public String getName() {
-        return name;
+    public String getPassengerName() {
+        return passengerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPassengerName(String passengerName) {
+        this.passengerName = passengerName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getPassengerAddress() {
+        return passengerAddress;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPassengerAddress(String passengerAddress) {
+        this.passengerAddress = passengerAddress;
     }
 
-    public Aircraft getAirline() {
-        return airline;
+    public String getPassengerPhone() {
+        return passengerPhone;
     }
 
-    public void setAirline(Aircraft airline) {
-        this.airline = airline;
+    public void setPassengerPhone(String passengerPhone) {
+        this.passengerPhone = passengerPhone;
+    }
+
+    public Aircraft getAircraftId() {
+        return aircraftId;
+    }
+
+    public void setAircraftId(Aircraft aircraftId) {
+        this.aircraftId = aircraftId;
     }
 }
