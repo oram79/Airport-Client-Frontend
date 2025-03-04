@@ -1,29 +1,29 @@
 package com.plane.domain;
 
 public class Passenger {
-    private long id;
+    private long passengerId;
 
     private String name;
     private String email;
 
-    private Aircraft aircraft;
+    private Aircraft airline;
 
-    public Passenger () {
+    public Passenger() {
     }
 
-    public Passenger(long id, String name, String email, Aircraft aircraft) {
-        this.id = id;
+    public Passenger(long passengerId, String name, String email, Aircraft airline) {
+        this.passengerId = passengerId;
         this.name = name;
         this.email = email;
-        this.aircraft = aircraft;
+        this.airline = airline;
     }
 
-    public long getId() {
-        return id;
+    public long getPassengerId() {
+        return passengerId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setPassengerId(long passengerId) {
+        this.passengerId = passengerId;
     }
 
     public String getName() {
@@ -42,11 +42,11 @@ public class Passenger {
         this.email = email;
     }
 
-    public Aircraft getAircraft() {
-        return aircraft;
+    public Aircraft getAirline() {
+        return airline;
     }
 
-    public void setAircraft(Aircraft aircraft) {
-        this.aircraft = aircraft;
+    public void setAirline(Aircraft airline) {
+        this.airline = airline;
     }
 }
