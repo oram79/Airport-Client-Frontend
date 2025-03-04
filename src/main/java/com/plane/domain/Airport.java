@@ -16,6 +16,10 @@ public class Airport {
     public Airport () {
     }
 
+    public Airport(String code) {
+        this.code = code;
+    }
+    
     public Airport(long airportId, String name, String code, City cityName, List<Aircraft> aircrafts) {
         this.airportId = airportId;
         this.name = name;
