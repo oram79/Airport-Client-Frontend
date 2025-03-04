@@ -1,22 +1,26 @@
 package com.plane.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class City {
     private long cityId;
-    private String name;
+
+    private String cityName;
     private String country;
 
-    private List<Airport> airports;
+    private List<Airport> airports = new ArrayList<Airport>();
+    private String population;
 
     public City() {
     }
 
-    public City(long cityId, String name, String country, List<Airport> airports) {
+    public City(long cityId, String cityName, String country, List<Airport> airports, String population) {
         this.cityId = cityId;
-        this.name = name;
+        this.cityName = cityName;
         this.country = country;
         this.airports = airports;
+        this.population = population;
     }
 
     public long getCityId() {
@@ -27,12 +31,12 @@ public class City {
         this.cityId = cityId;
     }
 
-    public String getName() {
-        return name;
+    public String getCityName() {
+        return cityName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
     }
 
     public String getCountry() {
@@ -49,5 +53,13 @@ public class City {
 
     public void setAirports(List<Airport> airports) {
         this.airports = airports;
+    }
+
+    public String getPopulation() {
+        return population;
+    }
+
+    public void setPopulation(String population) {
+        this.population = population;
     }
 }
