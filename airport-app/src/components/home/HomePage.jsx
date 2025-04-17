@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import api from '../../api';
 import ArrivalBoard from './ArrivalBoard';
 import DepartureBoard from './DepartureBoard';
-import api from '../../api';
 
 const HomePage = ({ selectedAirport, setSelectedAirport }) => {
   const [airports, setAirports] = useState([]);
@@ -16,7 +16,7 @@ const HomePage = ({ selectedAirport, setSelectedAirport }) => {
         const data = await api.airports.getAllAirports();
         setAirports(data);
         
-        // If we have airports and selectedAirport is valid, set currentAirport
+        // If we have airports and selectedAirport is valid, set currentAirport //
         if (data.length > 0) {
           const airportToShow = data.find(airport => airport.airportId === selectedAirport) || data[0];
           setCurrentAirport(airportToShow);
@@ -50,8 +50,8 @@ const HomePage = ({ selectedAirport, setSelectedAirport }) => {
     <div className="home-page">
       <div className="airport-selector">
         <label htmlFor="airport-select">Select Airport:</label>
-        <select 
-          id="airport-select" 
+        <select
+          id="airport-select"
           value={selectedAirport || ''}
           onChange={handleAirportChange}
         >

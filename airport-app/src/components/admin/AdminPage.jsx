@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import City from './City';
-import Airport from './Airport';
 import Aircraft from './Aircraft';
-import Gate from './Gate';
-import Flight from './Flight';
 import Airline from './Airline';
+import Airport from './Airport';
+import City from './City';
+import Flight from './Flight';
+import Gate from './Gate';
 import Passenger from './Passenger';
 
 const AdminPage = () => {
@@ -37,43 +37,43 @@ const AdminPage = () => {
       <p>Manage all entities of the airport system</p>
       
       <div className="admin-nav">
-        <button 
+        <button
           className={`admin-tab ${activeTab === 'city' ? 'active' : ''}`}
           onClick={() => setActiveTab('city')}
         >
           Cities
         </button>
-        <button 
+        <button
           className={`admin-tab ${activeTab === 'airport' ? 'active' : ''}`}
           onClick={() => setActiveTab('airport')}
         >
           Airports
         </button>
-        <button 
+        <button
           className={`admin-tab ${activeTab === 'aircraft' ? 'active' : ''}`}
           onClick={() => setActiveTab('aircraft')}
         >
           Aircraft
         </button>
-        <button 
+        <button
           className={`admin-tab ${activeTab === 'gate' ? 'active' : ''}`}
           onClick={() => setActiveTab('gate')}
         >
           Gates
         </button>
-        <button 
+        <button
           className={`admin-tab ${activeTab === 'flight' ? 'active' : ''}`}
           onClick={() => setActiveTab('flight')}
         >
           Flights
         </button>
-        <button 
+        <button
           className={`admin-tab ${activeTab === 'airline' ? 'active' : ''}`}
           onClick={() => setActiveTab('airline')}
         >
           Airlines
         </button>
-        <button 
+        <button
           className={`admin-tab ${activeTab === 'passenger' ? 'active' : ''}`}
           onClick={() => setActiveTab('passenger')}
         >

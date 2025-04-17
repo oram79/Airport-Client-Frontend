@@ -6,16 +6,16 @@ const Navbar = () => {
     <nav className="navbar">
       <ul className="nav-list">
         <li>
-          <NavLink 
-            to="/" 
+          <NavLink
+            to="/"
             className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
           >
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink 
-            to="/admin" 
+          <NavLink
+            to="/admin"
             className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
           >
             Admin Panel
