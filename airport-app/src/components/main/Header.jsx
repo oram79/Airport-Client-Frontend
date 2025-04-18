@@ -3,8 +3,10 @@ import React from 'react';
 const Header = () => {
   return (
     <header className="header">
-      <h1>Canadian Airports Flight Management System</h1>
-      <p>Real-time arrivals and departures information</p>
+      <div className="header-content">
+        <h1>Airport Flight Management System</h1>
+        <p>Live Flight Tracking & Airport Information</p>
+      </div>
     </header>
   );
 };
