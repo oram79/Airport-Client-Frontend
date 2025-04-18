@@ -12,7 +12,8 @@ const DepartureBoard = ({ airportCode }) => {
       
       try {
         setLoading(true);
-        const data = await api.flights.getFlightsByOrigin(airportCode);
+        // Updated to use the correct endpoint
+        const data = await api.airports.getAirportDepartures(airportCode);
         const enhancedData = data.map(flight => ({
           ...flight,
           status: getRandomStatus(),

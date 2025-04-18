@@ -48,7 +48,7 @@ const http = {
 
 const api = {
   
-  // City services
+  // City services - Matches CitiesController.java endpoints
   cities: {
     getAllCities: () => http.get('/listAllCities'),
     getCityById: (cityId) => http.get(`/getCityById/${cityId}`),
@@ -57,7 +57,7 @@ const api = {
     deleteCity: (cityId) => http.delete(`/deleteCityById/${cityId}`)
   },
   
-  // Airport services
+  // Airport services - Matches AirportController.java endpoints
   airports: {
     getAllAirports: () => http.get('/listAllAirports'),
     getAirportById: (airportId) => http.get(`/getAirportById/${airportId}`),
@@ -65,11 +65,11 @@ const api = {
     createAirport: (airportData) => http.post('/addNewAirport', airportData),
     updateAirport: (airportId, airportData) => http.put(`/updateAirportById/${airportId}`, airportData),
     deleteAirport: (airportId) => http.delete(`/deleteAirportById/${airportId}`),
-    getAirportArrivals: (flightOrigin) => http.get(`/airport-arrivals?flightOrigin=${flightOrigin}`),
-    getAirportDepartures: (flightDestination) => http.get(`/airport-departures?flightDestination=${flightDestination}`)
+    getAirportArrivals: (airportCode) => http.get(`/airport-arrivals?airportCode=${airportCode}`),
+    getAirportDepartures: (airportCode) => http.get(`/airport-departures?airportCode=${airportCode}`)
   },
   
-  // Aircraft services
+  // Aircraft services - Matches AircraftController.java endpoints
   aircraft: {
     getAllAircraft: () => http.get('/listAllAircrafts'),
     getAircraftById: (aircraftId) => http.get(`/getAircraftById/${aircraftId}`),
@@ -80,7 +80,7 @@ const api = {
     addAirportToAircraft: (aircraftId, airportId) => http.post(`/${aircraftId}/airports/${airportId}`)
   },
   
-  // Gate services
+  // Gate services - Matches GateController.java endpoints
   gates: {
     getAllGates: () => http.get('/getAllGates'),
     getGateById: (gateId) => http.get(`/getGateById/${gateId}`),
@@ -91,7 +91,7 @@ const api = {
     deleteGate: (gateId) => http.delete(`/deleteGateById/${gateId}`)
   },
   
-  // Flight services
+  // Flight services - Matches FlightController.java endpoints
   flights: {
     getAllFlights: () => http.get('/api/flights/get-all-flights'),
     getFlightById: (flightId) => http.get(`/api/flights/${flightId}`),
@@ -102,7 +102,7 @@ const api = {
     getFlightsByAirline: (airline) => http.get(`/api/flights/search/by-flight-airline?flightAirline=${airline}`)
   },
   
-  // Airline services
+  // Airline services - Matches AirlineController.java endpoints
   airlines: {
     getAllAirlines: () => http.get('/api/airlines/get-all-airlines'),
     getAirlineById: (airlineId) => http.get(`/api/airlines/${airlineId}`),
@@ -113,7 +113,7 @@ const api = {
     getAllFlightsForAirline: (airlineId) => http.get(`/api/airlines/getAllFlightsForAirlineById/${airlineId}`)
   },
   
-  // Passenger services
+  // Passenger services - Matches PassengersController.java endpoints
   passengers: {
     getAllPassengers: () => http.get('/getAllPassengers'),
     getPassengerById: (passengerId) => http.get(`/findByPassengerID/${passengerId}`),
