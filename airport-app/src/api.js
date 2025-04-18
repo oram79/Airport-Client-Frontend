@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:8080';
+const API_BASE_URL = 'http://159.2.125.229/32';
 
 async function fetchData(endpoint, options = {}) {
   try {
