@@ -8,6 +8,7 @@ const HomePage = ({ selectedAirport, setSelectedAirport }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentAirport, setCurrentAirport] = useState(null);
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
     const fetchAirports = async () => {
@@ -16,7 +17,6 @@ const HomePage = ({ selectedAirport, setSelectedAirport }) => {
         const data = await api.airports.getAllAirports();
         setAirports(data);
         
-        // If we have airports and selectedAirport is valid, set currentAirport //
         if (data.length > 0) {
           const airportToShow = data.find(airport => airport.airportId === selectedAirport) || data[0];
           setCurrentAirport(airportToShow);
@@ -31,6 +31,13 @@ const HomePage = ({ selectedAirport, setSelectedAirport }) => {
     };
 
     fetchAirports();
+    
+    // Update the clock every minute
+    const clockInterval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 60000);
+    
+    return () => clearInterval(clockInterval);
   }, [selectedAirport]);
 
   const handleAirportChange = (e) => {
@@ -38,8 +45,22 @@ const HomePage = ({ selectedAirport, setSelectedAirport }) => {
     setSelectedAirport(airportId);
   };
 
+  const formatDate = (date) => {
+    const options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    };
+    return date.toLocaleDateString(undefined, options);
+  };
+
   if (loading) {
-    return <div className="loading">Loading airport data...</div>;
+    return (
+      <div className="loading">
+        <p>Loading airport data...</p>
+      </div>
+    );
   }
 
   if (error) {
@@ -48,19 +69,24 @@ const HomePage = ({ selectedAirport, setSelectedAirport }) => {
 
   return (
     <div className="home-page">
-      <div className="airport-selector">
-        <label htmlFor="airport-select">Select Airport:</label>
-        <select
-          id="airport-select"
-          value={selectedAirport || ''}
-          onChange={handleAirportChange}
-        >
-          {airports.map((airport) => (
-            <option key={airport.airportId} value={airport.airportId}>
-              {airport.name} ({airport.code})
-            </option>
-          ))}
-        </select>
+      <div className="airport-selector-container">
+        <div className="current-time">
+          <p>{formatDate(currentTime)}</p>
+        </div>
+        <div className="airport-selector">
+          <label htmlFor="airport-select">Select Airport:</label>
+          <select
+            id="airport-select"
+            value={selectedAirport || ''}
+            onChange={handleAirportChange}
+          >
+            {airports.map((airport) => (
+              <option key={airport.airportId} value={airport.airportId}>
+                {airport.name} ({airport.code})
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
 
       {currentAirport && (
